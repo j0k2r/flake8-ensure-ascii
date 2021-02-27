@@ -1,0 +1,40 @@
+[flake8]
+# Base flake8 configuration:
+# https://flake8.pycqa.org/en/latest/user/configuration.html
+format = default
+show-source = True
+statistics = False
+doctests = False
+
+# Plugins:
+max-complexity = 10
+max-line-length = 79
+
+# strings are in single or double quotes
+inline-quotes = double
+
+# Disable some pydocstyle checks:
+# Exclude some pydoctest checks globally:
+ignore =
+	# line break before binary operator
+    W503
+    # line break after binary operator
+    W504
+	# Ignore TODO keys
+	T101
+
+# Excluding some directories:
+exclude =
+    .git
+    __pycache__
+    .venv
+    .eggs
+    *.egg
+    # add the following directories
+    .venv
+    .vscode
+
+# Ignoring some errors in some files:
+per-file-ignores =
+  # Enable `assert` keyword and magic numbers for tests:
+  tests/*.py: S101, WPS226, WPS432
